@@ -1,16 +1,18 @@
-app:
-  name: pinecone-assistant
-  services:
-    - name: web
-      instance_types:
-        - name: nano
-      ports:
-        - port: 8080
-      env:
-        - name: PINECONE_API_KEY
-          value: "pcsk_7Pqpvr_AzKRnajNm47FRJgzMBsHfCDVnYQ42VvqBrb1DxzWHfScbMVaPoVTyXEQPbCmWHF"
-        - name: ASSISTANT_NAME
-          value: "testing-pdf-data"
-      routes:
-        - path: /
-          port: 8080
+name: pinecone-assistant
+services:
+  - name: web
+    instance_type: nano
+    git:
+      branch: main
+    build:
+      builder: python
+    ports:
+      - port: 8080
+    env:
+      - name: PINECONE_API_KEY
+        value: "pcsk_7Pqpvr_AzKRnajNm47FRJgzMBsHfCDVnYQ42VvqBrb1DxzWHfScbMVaPoVTyXEQPbCmWHF"
+      - name: ASSISTANT_NAME
+        value: "testing-pdf-data"
+    routes:
+      - port: 8080
+        path: /

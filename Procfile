@@ -1,4 +1,3 @@
-# Procfile
 web: python main.py
 
 # runtime.txt
