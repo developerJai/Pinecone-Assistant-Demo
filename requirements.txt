@@ -6,9 +6,8 @@ flask==3.0.3
 itsdangerous==2.2.0
 jinja2==3.1.4
 markupsafe==2.1.5
-pinecone-client==5.0.1
-pinecone-plugin-inference==1.1.0
-pinecone-plugin-interface==0.0.7
+pinecone-client==2.2.2  # Downgrading to version that includes assistant plugin
+pinecone-plugins==0.0.10  # Adding the plugins package
 tqdm==4.66.5
 typing-extensions==4.12.2
 urllib3==2.2.3
