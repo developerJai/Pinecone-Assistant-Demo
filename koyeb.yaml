@@ -8,9 +8,9 @@ services:
       - port: 8080
     env:
       - name: PINECONE_API_KEY
-        value: pcsk_7Pqpvr_AzKRnajNm47FRJgzMBsHfCDVnYQ42VvqBrb1DxzWHfScbMVaPoVTyXEQPbCmWHF
+        value: PINECONE_API_KEY
       - name: ASSISTANT_NAME
-        value: testing-pdf-data
+        value: ASSISTANT_NAME
     healthcheck:
       port: 8080
       path: /health
