@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from pinecone import Pinecone
-# from pinecone_plugins.assistant.models.chat import Message
+from pinecone_plugins.assistant.models.chat import Message
 import os
 import sys
 
@@ -29,17 +29,17 @@ except Exception as e:
     print(f"ERROR initializing Pinecone: {str(e)}", file=sys.stderr)
     raise
 
-# def chat_with_assistant(question):
-#     chat_context = [Message(content=question)]
-#     response = assistant.chat_completions(messages=chat_context)
-#     return response.choices[0].message.content
-
-
 def chat_with_assistant(question):
-    # Create message dictionary directly
-    chat_context = [{"role": "user", "content": question}]
+    chat_context = [Message(content=question)]
     response = assistant.chat_completions(messages=chat_context)
     return response.choices[0].message.content
+
+
+# def chat_with_assistant(question):
+#     # Create message dictionary directly
+#     chat_context = [{"role": "user", "content": question}]
+#     response = assistant.chat_completions(messages=chat_context)
+#     return response.choices[0].message.content
 
 @app.route('/ask', methods=['POST'])
 def ask():
