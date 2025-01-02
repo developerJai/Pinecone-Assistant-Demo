@@ -6,7 +6,7 @@ flask==3.0.3
 itsdangerous==2.2.0
 jinja2==3.1.4
 markupsafe==2.1.5
-pinecone-client==4.1.1  # Using version 4.1.1 which uses the Pinecone class import
+pinecone-client==2.2.1  # Rolling back to version 2.2.1 which included the plugins structure
 tqdm==4.66.5
 typing-extensions==4.12.2
 urllib3==2.2.3
