@@ -8,6 +8,10 @@ services:
       - port: 8080
     env:
       - name: PINECONE_API_KEY
-        value: "pcsk_7Pqpvr_AzKRnajNm47FRJgzMBsHfCDVnYQ42VvqBrb1DxzWHfScbMVaPoVTyXEQPbCmWHF"
+        value: pcsk_7Pqpvr_AzKRnajNm47FRJgzMBsHfCDVnYQ42VvqBrb1DxzWHfScbMVaPoVTyXEQPbCmWHF
       - name: ASSISTANT_NAME
-        value: "testing-pdf-data"
+        value: testing-pdf-data
+    healthcheck:
+      port: 8080
+      path: /health
+      initial_delay: 10s
